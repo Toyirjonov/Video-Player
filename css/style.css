@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.video-container {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+  margin: 20px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+.video-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  z-index: 1;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:not(:fullscreen):hover .controls {
+  opacity: 1;
+}
+
+.video-container:fullscreen:hover .controls {
+  opacity: 1;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.control-btn:disabled {
+  color: #555;
+  cursor: not-allowed;
+}
+
+.progress-container {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #ff0000;
+  border-radius: 2px;
+  width: 0;
+}
+
+.time-display {
+  font-size: 12px;
+  min-width: 80px;
+}
+
+.file-upload {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  padding: 10px 20px;
+  background: #ff0000;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.upload-label:hover {
+  background: #cc0000;
+}
+
+.playlist {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.playlist-item {
+  background: #222;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.playlist-item:hover {
+  background: #333;
+}
+
+.playlist-item.active {
+  background: #ff0000;
+}
+
+.settings-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.settings-menu.active {
+  display: flex;
+}
+
+.settings-option {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.settings-sub-menu {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 100%;
+  top: 0;
+}
+
+.settings-option:hover .settings-sub-menu {
+  display: flex;
+}
+
+.settings-sub-option {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.settings-sub-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.settings-sub-option.active {
+  background: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    margin: 10px;
+    border-radius: 0;
+  }
+
+  .controls {
+    padding: 8px;
+  }
+}
