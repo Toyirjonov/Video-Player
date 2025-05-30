@@ -10,68 +10,81 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="file-upload">
-      <label for="videoUpload" class="upload-label"
-        >Video faylni tanglang</label
-      >
-      <input
-        type="file"
-        id="videoUpload"
-        accept=".mp4,.avi,.mov,.mkv"
-        multiple
-      />
-    </div>
-
-    <div class="video-container">
-      <div class="video-title" id="videoTitle">Video nomi</div>
-      <video id="videoPlayer">
-        <source src="" type="video/mp4" />
-        Brauzeringiz video tegi uchun qo‘llab-quvvatlamaydi.
-      </video>
-      <div class="controls" id="controls">
-        <button class="control-btn" id="prevVideoBtn">⏮</button>
-        <button class="control-btn" id="playPauseBtn">▶</button>
-        <button class="control-btn" id="nextVideoBtn">⏭</button>
-        <div class="progress-container" id="progressContainer">
+    <div class="video-player">
+      <video
+        id="video"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        preload="auto"
+      ></video>
+      <div class="controls">
+        <button id="playPauseBtn">▶</button>
+        <div class="progress">
           <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
-        <button class="control-btn" id="settingsBtn">⚙️</button>
-        <button class="control-btn" id="fullscreenBtn">⛶</button>
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          class="volume"
+        />
+        <button id="fullScreenBtn">⛶</button>
       </div>
-      <div class="settings-menu" id="settingsMenu">
-        <div class="settings-option">
-          Video Tezligi
-          <span id="currentPlaybackRate">1x</span>
-          <div class="settings-sub-menu" id="playbackRateMenu">
-            <!-- <div class="settings-sub-option" data-rate="0.25">0.25x</div> -->
-            <div class="settings-sub-option" data-rate="0.5">0.5x</div>
-            <!-- <div class="settings-sub-option" data-rate="0.75">0.75x</div> -->
-            <div class="settings-sub-option active" data-rate="1">1x</div>
-            <!-- <div class="settings-sub-option" data-rate="1.25">1.25x</div> -->
-            <div class="settings-sub-option" data-rate="1.5">1.5x</div>
-            <div class="settings-sub-option" data-rate="2">2x</div>
-          </div>
-        </div>
-        <div class="settings-option">
-          Video Sifati
-          <span id="currentQuality">Avto rejim</span>
-          <div class="settings-sub-menu" id="qualityMenu">
-            <div class="settings-sub-option active" data-quality="auto">
-              Avto rejim
-            </div>
-            <div class="settings-sub-option" data-quality="144p">144p</div>
-            <div class="settings-sub-option" data-quality="240p">240p</div>
-            <div class="settings-sub-option" data-quality="360p">360p</div>
-            <div class="settings-sub-option" data-quality="480p">480p</div>
-            <div class="settings-sub-option" data-quality="720p">720p</div>
-            <div class="settings-sub-option" data-quality="1080p">1080p</div>
-          </div>
-        </div>
+      <div class="playlist">
+        <select id="videoSelect">
+          <option value="https://www.w3schools.com/html/mov_bbb.mp4">
+            Video 1: Big Buck Bunny
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+          >
+            Video 2: Elephants Dream
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+          >
+            Video 3: For Bigger Blazes
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+          >
+            Video 4: For Bigger Escapes
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+          >
+            Video 5: For Bigger Fun
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+          >
+            Video 6: For Bigger Joyrides
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+          >
+            Video 7: For Bigger Meltdowns
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+          >
+            Video 8: Sintel
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+          >
+            Video 9: Subaru Outback
+          </option>
+          <option
+            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+          >
+            Video 10: Tears of Steel
+          </option>
+        </select>
       </div>
     </div>
-
-    <div class="playlist" id="playlist"></div>
     <script src="./js/app.js"></script>
   </body>
 </html>
