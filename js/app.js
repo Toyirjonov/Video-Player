@@ -1,5 +1,7 @@
 const video = document.getElementById("video");
 const playPauseBtn = document.getElementById("playPauseBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 const progressBar = document.getElementById("progressBar");
 const volumeSlider = document.getElementById("volumeSlider");
 const fullScreenBtn = document.getElementById("fullScreenBtn");
@@ -48,6 +50,29 @@ videoSelect.addEventListener("change", (e) => {
   playPauseBtn.textContent = "⏸";
 });
 
+prevBtn.addEventListener("click", () => {
+  let currentIndex = videoSelect.selectedIndex;
+  if (currentIndex > 0) {
+    videoSelect.selectedIndex = currentIndex - 1;
+    video.src = videoSelect.value;
+    video.load();
+    video.play();
+    playPauseBtn.textContent = "⏸";
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  let currentIndex = videoSelect.selectedIndex;
+  if (currentIndex < videoSelect.options.length - 1) {
+    videoSelect.selectedIndex = currentIndex + 1;
+    video.src = videoSelect.value;
+    video.load();
+    video.play();
+    playPauseBtn.textContent = "⏸";
+  }
+});
+
+// Горячие клавиши
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
     e.preventDefault();

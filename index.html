@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon" />
     <title>Uztube video player</title>
-
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -13,11 +12,13 @@
     <div class="video-player">
       <video
         id="video"
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        src="./music/001-Kursga-kirish-JavaScript-O-zbekcha.mp4"
         preload="auto"
       ></video>
       <div class="controls">
         <button id="playPauseBtn">▶</button>
+        <button class="prev-btn" id="prevBtn"><</button>
+        <button class="next-btn" id="nextBtn">></button>
         <div class="progress">
           <div class="progress-bar" id="progressBar"></div>
         </div>
@@ -34,53 +35,14 @@
       </div>
       <div class="playlist">
         <select id="videoSelect">
-          <option value="https://www.w3schools.com/html/mov_bbb.mp4">
-            Video 1: Big Buck Bunny
-          </option>
           <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            value="./music/001-Kursga-kirish-JavaScript-O-zbekcha.mp4"
+            selected
           >
-            Video 2: Elephants Dream
+            Video 1: Kursga kirish JavaScript O'zbekcha
           </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-          >
-            Video 3: For Bigger Blazes
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-          >
-            Video 4: For Bigger Escapes
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-          >
-            Video 5: For Bigger Fun
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
-          >
-            Video 6: For Bigger Joyrides
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
-          >
-            Video 7: For Bigger Meltdowns
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-          >
-            Video 8: Sintel
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
-          >
-            Video 9: Subaru Outback
-          </option>
-          <option
-            value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-          >
-            Video 10: Tears of Steel
+          <option value="./music/002-Bizga-nima-kerak-bo-ladi.mp4">
+            Video 2: Bizga nima kerak bo'ladi
           </option>
         </select>
       </div>
